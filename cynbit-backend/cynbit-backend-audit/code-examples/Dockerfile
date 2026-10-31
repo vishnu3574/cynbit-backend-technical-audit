@@ -1,7 +1,7 @@
 FROM maven:3.9.9-eclipse-temurin-21 AS builder
 WORKDIR /app
-COPY cynbit-backend/cynbit-backend-audit/code-examples/pom.xml ./pom.xml
-COPY cynbit-backend/cynbit-backend-audit/code-examples/src ./src
+COPY pom.xml .
+COPY src ./src
 RUN mvn clean package -DskipTests
 
 FROM eclipse-temurin:21-jre-jammy
